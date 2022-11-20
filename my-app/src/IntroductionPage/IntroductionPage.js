@@ -43,8 +43,10 @@ const IntroductionPage = ({ setIsRoomHostAction }) => {
                 <span className='low-bandwidth'>low-bandwidth </span>
                 internet.
               </p>{" "}
-              <ConnectingButtons />
             </div>
+          </div>
+          <div className='connection_buttons_containers'>
+            <ConnectingButtons />
           </div>
         </div>
         <div class='column'>

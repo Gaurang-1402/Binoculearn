@@ -3,7 +3,6 @@
   height: 100vh;
   align-items: center;
   background-image: url("../resources/images/background.png");
-
   justify-content: center;
 }
 
@@ -78,6 +77,23 @@ header {
 }
 
 .join_room_button {
+  width: 180px;
+  margin-right: 15px;
+  height: 50px;
+  background-color: #1fb564;
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  color: white;
+  transition: 0.3s;
+  font-size: 20px;
+}
+
+.join_room_button:hover {
+  background-color: blue;
+}
+
+.create_room_button {
   background-color: #2d8cff;
   border: 1px solid #e5e5e5;
   color: white;
@@ -89,22 +105,11 @@ header {
   transition: 0.3s;
 }
 
-.join_room_button:hover {
-  background-color: blue;
-}
-
-.create_room_button {
-  margin-top: 15px;
-  background-color: white;
-  border: 1px solid #e5e5e5;
-  color: black;
-  font-size: 13px;
-  width: 180px;
-  height: 30px;
-  border-radius: 8px;
-  transition: 0.3s;
-}
-
 .create_room_button:hover {
   background-color: #e5e5e5;
+}
+
+connection_buttons_containers {
+  display: flex;
+  flex-direction: row;
 }
