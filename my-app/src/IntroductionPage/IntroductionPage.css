@@ -37,11 +37,11 @@ header {
   width: 804px;
   height: 432px;
 
-  font-family: "Urbanist";
+  font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 90px;
-  line-height: 108px;
+  font-size: 70px;
+  line-height: 90px;
   color: white;
 }
 .learn {
@@ -75,7 +75,7 @@ header {
   display: flex;
   flex-direction: row;
   margin-left: 0;
-  font-family: "Urbanist";
+  font-family: 'Poppins', sans-serif;
   font-style: normal;
 }
 
@@ -90,7 +90,7 @@ header {
   color: #163f8d;
   transition: 0.3s;
   font-size: 20px;
-  font-family: "Urbanist";
+  font-family: 'Poppins', sans-serif;
   font-style: normal;
 }
 
@@ -109,7 +109,7 @@ header {
   color: #ffffff;
   transition: 0.3s;
   font-size: 20px;
-  font-family: "Urbanist";
+  font-family: 'Poppins', sans-serif;
   font-style: normal;
 }
 

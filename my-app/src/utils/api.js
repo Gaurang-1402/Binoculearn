@@ -14,3 +14,4 @@ export const getTURNCredentials = async () => {
 
 export const GET_SENTIMENT_URL=`${serverApi}/findSentiment`
 
+export const GET_SUMMARY_URL=`${serverApi}/summarize`

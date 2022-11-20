@@ -10,7 +10,7 @@ const LeaveRoomButton = () => {
   return (
     <div className='video_button_container'>
       <button className='video_button_end' onClick={handleRoomDisconnection}>
-        <img src={dialIcon}></img>
+        <img src={dialIcon} style={{width: '30px'}}></img>
       </button>
     </div>
   )

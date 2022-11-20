@@ -48,7 +48,7 @@ const NewMessage = ({messages}) => {
   return (
     <div>
 
-      <div style={{fontSize: '14px', textAlign: 'center', width: '100%'}}>Overall meeting sentiment: {sentimentToEmoji(overallMeetingSentiment)}</div>
+      <div style={{color: 'white', fontSize: '14px', textAlign: 'center', width: '100%'}}>Overall meeting sentiment: {sentimentToEmoji(overallMeetingSentiment)}</div>
 
       <div className="new_message_container">
         <input

@@ -22,8 +22,8 @@ const Message = ({ author, content, sameAuthor, messageCreatedByMe, sentiment })
   return (
     <div className={`message_container ${alignClass}`} style={{ position: 'relative' }}>
       {!sameAuthor && <p className="message_title">{authorText}</p>}
-      <p className={`message_content ${contentAdditionalStyles}`}>{content} </p>
-      <p style={{ fontSize: '11px', position: 'absolute', bottom: '-30px' }}>Sentiment: {sentimentToEmoji(sentiment)}</p>
+      <p style={{ color: 'white', }} className={`message_content ${contentAdditionalStyles}`}>{content} </p>
+      <p style={{ color: 'white', fontSize: '11px', position: 'absolute', bottom: '-30px' }}>Sentiment: {sentimentToEmoji(sentiment)}</p>
     </div>
   );
 };

@@ -2,7 +2,8 @@
   width: 100%;
   height: 100vh;
   display: flex;
-  background-image: url("../resources/images/background.png");
+  background: #1f272f;
+  /* background-image: url("../resources/images/background.png"); */
 }
 
 .chat_section_container {
@@ -12,7 +13,7 @@
   display: flex;
   flex-direction: column;
 
-  font-family: "Urbanist";
+  font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 30px;
@@ -43,10 +44,10 @@
 
 .new_message_input {
   border: 1px solid #d1dbe2;
-  border-radius: 60px;
-  padding: 0 50px 0px 20px;
-  height: 60px;
-  font-size: 16px;
+  border-radius: 20px;
+  padding: 0px 20px 0px 9px;
+  height: 40px;
+  font-size: 14px;
   width: 80%;
   box-shadow: 2px 20px 5px rgba(0, 82, 201, 0.05);
 }
@@ -94,7 +95,7 @@
 .message_title {
   margin: 0 0 4px 0;
   padding: 0 10px;
-  color: black;
+  color: white;
   font-size: 16px;
   font-weight: bolder;
   display: block;
@@ -103,6 +104,7 @@
 .message_content {
   padding: 2.5px 15px 2.5px 10px;
   border-radius: 10px;
+  line-height: 16px;
   font-size: 12px;
   display: inline-block;
 }
@@ -195,7 +197,7 @@
   display: flex;
   flex-direction: column;
 
-  font-family: "Urbanist";
+  font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 30px;
@@ -230,6 +232,7 @@
 }
 
 .video_buttons_container {
+  z-index: 99999;
   width: 60%;
   height: 10%;
   display: flex;
@@ -247,6 +250,10 @@
   margin-left: 25px;
   display: flex;
   flex-direction: column;
+}
+
+.video_button_container img{
+  width: 45px;
 }
 
 .video_button_image {
