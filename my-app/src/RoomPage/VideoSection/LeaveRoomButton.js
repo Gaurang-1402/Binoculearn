@@ -1,5 +1,5 @@
 import React from "react"
-import dialIcon from "../../resources/images/dial_icon.png"
+import dialIcon from "../../resources/images/Dial_icon.png"
 
 const LeaveRoomButton = () => {
   const handleRoomDisconnection = () => {

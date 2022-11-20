@@ -1,7 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 
-const Message = ({ author, content, sameAuthor, messageCreatedByMe }) => {
+export const sentimentToEmoji = (sentiment) => {
+  return sentiment === 0 ? '😐' : (sentiment > 0 ? '🙂' : '😥')
+}
+
+
+
+
+const Message = ({ author, content, sameAuthor, messageCreatedByMe, sentiment }) => {
   const alignClass = messageCreatedByMe
     ? "message_align_right"
     : "message_align_left";
@@ -13,9 +20,10 @@ const Message = ({ author, content, sameAuthor, messageCreatedByMe }) => {
     : "message_left_styles";
 
   return (
-    <div className={`message_container ${alignClass}`}>
+    <div className={`message_container ${alignClass}`} style={{ position: 'relative' }}>
       {!sameAuthor && <p className="message_title">{authorText}</p>}
-      <p className={`message_content ${contentAdditionalStyles}`}>{content}</p>
+      <p className={`message_content ${contentAdditionalStyles}`}>{content} </p>
+      <p style={{ fontSize: '11px', position: 'absolute', bottom: '-30px' }}>Sentiment: {sentimentToEmoji(sentiment)}</p>
     </div>
   );
 };
@@ -32,6 +40,7 @@ const Messages = ({ messages }) => {
             key={`${message.content}${index}`}
             author={message.identity}
             content={message.content}
+            sentiment={message.sentiment}
             sameAuthor={sameAuthor}
             messageCreatedByMe={message.messageCreatedByMe}
           />

@@ -26,14 +26,21 @@ code {
 #dummy_video_canvas {
   display: none;
 }
+
 .video_track_container{
   height: fit-content;
+  border: 1px solid black;
 }
 .video_track_container pre{
   height: 200px;
-  font-size: 4px;
+  font-size: 4.5px;
   overflow: hidden;
   position: relative;
   object-position: center;
+  border: 1px solid white;
+  color: white;
+  border-radius: 10px;
+  padding: 1px;
+  width: fit-content;
   /* border-radius:10%; */
 }

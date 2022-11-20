@@ -7,8 +7,11 @@ require("dotenv").config()
 const PORT = process.env.PORT || 5002
 const app = express()
 const server = http.createServer(app)
+const cohere = require('cohere-ai');
 
 app.use(cors())
+app.use(express.json())
+
 
 let connectedUsers = []
 let rooms = []
@@ -228,6 +231,57 @@ const directMessageHandler = (data, socket) => {
   }
 }
 
+
+
+const findSentiment = async (text) => {
+  cohere.init(process.env.COHERE_API_KEY)
+
+  const response = await cohere.classify(
+    {
+      inputs: [text],
+      examples: [
+        { text: "The order came 5 days early", label: "positive"}, 
+        { text: "The item exceeded my expectations", label: "positive"}, 
+        { text: "I ordered more for my friends", label: "positive"}, 
+        { text: "I would buy this again", label: "positive"}, 
+        { text: "I would recommend this to others", label: "positive"}, 
+        { text: "The package was damaged", label: "negative"}, 
+        { text: "The order is 5 days late", label: "negative"}, 
+        { text: "The order was incorrect", label: "negative"}, 
+        { text: "I want to return my item", label: "negative"}, 
+        { text: "The item\'s material feels low quality", label: "negative"}, 
+        { text: "The product was okay", label: "neutral"}, 
+        { text: "I received five items in total", label: "neutral"}, 
+        { text: "I bought it from the website", label: "neutral"}, 
+        { text: "I used the product this morning", label: "neutral"}, 
+        { text: "The product arrived yesterday", label: "neutral"},
+      ]
+    }
+  );
+
+  const val=response.body.classifications[0].prediction
+  console.log(val, response.body.classifications[0])
+  return val==='negative'? -1: (val==='positive'?1:0);
+}
+
+
+
+app.post('/api/findSentiment', async (req, res) => {
+  try {
+    const data = req.body.message
+    res.send({
+      sentiment: await findSentiment(data)
+    })
+  } catch (err) {
+    console.log(err)
+    res.send({
+      sentiment: 0
+    });
+  }
+})
+
 server.listen(PORT, () => {
   console.log(`Server is listening on ${PORT}`)
 })
+
+

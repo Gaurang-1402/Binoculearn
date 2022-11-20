@@ -11,3 +11,6 @@ export const getTURNCredentials = async () => {
   const response = await axios.get(`${serverApi}/get-turn-credentials`)
   return response.data
 }
+
+export const GET_SENTIMENT_URL=`${serverApi}/findSentiment`
+

@@ -4,6 +4,8 @@ import * as wss from "./wss";
 import Peer from "simple-peer";
 import { fetchTURNCredentials, getTurnIceServers } from "./turn";
 import getAscii from "./getAscii";
+import axios from "axios";
+import { GET_SENTIMENT_URL } from "./api";
 
 const defaultConstraints = {
   audio: true,
@@ -313,14 +315,19 @@ const appendNewMessage = (messageData) => {
   store.dispatch(setMessages([...messages, messageData]));
 };
 
-export const sendMessageUsingDataChannel = (messageContent) => {
+export const sendMessageUsingDataChannel = async (messageContent) => {
   // append this message locally
   const identity = store.getState().identity;
 
+  const response=await axios.post(GET_SENTIMENT_URL, {
+    message: messageContent
+  })
   const localMessageData = {
     content: messageContent,
     identity,
     messageCreatedByMe: true,
+    // sentiment: Math.round(Math.random()*10)%3
+    sentiment: response.data.sentiment,
   };
 
   appendNewMessage(localMessageData);
@@ -335,3 +342,4 @@ export const sendMessageUsingDataChannel = (messageContent) => {
     peers[socketId].send(stringifiedMessageData);
   }
 };
+
