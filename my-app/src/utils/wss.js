@@ -4,7 +4,7 @@ import store from "../store/store"
 import * as webRTCHandler from "./webRTCHandler"
 import { appendNewMessageToChatHistory } from "./directMessages"
 
-const SERVER = "http://localhost:5002"
+const SERVER = process.env.REACT_APP_SERVER_URL
 
 let socket = null
 
