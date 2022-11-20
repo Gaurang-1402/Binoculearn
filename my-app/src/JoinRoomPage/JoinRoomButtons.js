@@ -1,37 +1,40 @@
-import React from "react";
-import { useHistory } from "react-router-dom";
+import React from "react"
+import { useHistory } from "react-router-dom"
 
 const Button = ({ buttonText, cancelButton = false, onClickHandler }) => {
   const buttonClass = cancelButton
     ? "join_room_cancel_button"
-    : "join_room_success_button";
+    : "join_room_success_button"
 
   return (
-    <button onClick={onClickHandler} className={buttonClass}>
-      {buttonText}
-    </button>
-  );
-};
+    <a href='#'>
+      <button onClick={onClickHandler} className={buttonClass}>
+        {buttonText}
+      </button>
+    </a>
+  )
+}
 
 const JoinRoomButtons = ({ handleJoinRoom, isRoomHost }) => {
-  const successButtonText = isRoomHost ? "Host" : "Join";
+  const successButtonText = isRoomHost ? "Host" : "Join"
 
-  const history = useHistory();
+  const history = useHistory()
 
   const pushToIntroductionPage = () => {
-    history.push("/");
-  };
+    history.push("/")
+  }
 
   return (
-    <div className="join_room_buttons_container">
+    <div className='join_room_buttons_container'>
       <Button buttonText={successButtonText} onClickHandler={handleJoinRoom} />
+
       <Button
-        buttonText="Cancel"
+        buttonText='Cancel'
         cancelButton
         onClickHandler={pushToIntroductionPage}
       />
     </div>
-  );
-};
+  )
+}
 
-export default JoinRoomButtons;
+export default JoinRoomButtons

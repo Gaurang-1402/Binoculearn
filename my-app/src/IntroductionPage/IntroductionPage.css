@@ -1,17 +1,67 @@
 .introduction_page_container {
   width: 100%;
   height: 100vh;
-  display: flex;
   align-items: center;
+  background-image: url("../resources/images/background.png");
+
   justify-content: center;
 }
 
+header {
+  width: 100%;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #ccc;
+}
+.nav {
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+}
+.navlink {
+  list-style: none;
+  margin: 0;
+}
+.navlink a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+.row {
+  margin-top: 50px;
+  display: flex;
+}
+
+.main-text {
+  width: 804px;
+  height: 432px;
+
+  font-family: "Urbanist";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 90px;
+  line-height: 108px;
+  color: white;
+}
+.learn {
+  color: #b9ffc4;
+}
+.low-bandwidth {
+  color: #ffa5a5;
+}
+.column {
+  flex: 50%;
+  padding-left: 20rem;
+}
+.logo {
+  letter-spacing: 3px;
+}
 .introduction_page_panel {
   width: 600px;
   height: 400px;
-  background-color: white;
-  border: 1px solid grey;
-  filter: drop-shadow(0 0 0.2rem grey);
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,7 +69,7 @@
 }
 
 .introduction_page_image {
-  width: 150px;
+  width: 350px;
 }
 
 .connecting_buttons_container {
