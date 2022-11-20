@@ -1,6 +1,8 @@
 import React from "react";
 import CameraButton from "./CameraButton";
 import LeaveRoomButton from "./LeaveRoomButton";
+import TimeAndDate from "../TimeAndDateComponent/TimeAndDate";
+import NetworkQuality from "../NetworkQuality/NetworkQuality";
 import MicButton from "./MicButton";
 import SwitchToScreenSharingButton from "./SwitchToScreenSharingButton";
 import { connect } from "react-redux";
@@ -14,6 +16,8 @@ const VideoButtons = (props) => {
       {!connectOnlyWithAudio && <CameraButton />}
       <LeaveRoomButton />
       {!connectOnlyWithAudio && <SwitchToScreenSharingButton />}
+      <TimeAndDate />
+      <NetworkQuality />
     </div>
   );
 };
