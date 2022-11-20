@@ -2,6 +2,7 @@
   width: 100%;
   height: 100vh;
   display: flex;
+  background-image: url("../resources/images/background.png");
 }
 
 .chat_section_container {
@@ -10,6 +11,12 @@
   background-color: white;
   display: flex;
   flex-direction: column;
+
+  font-family: "Urbanist";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 36px;
 }
 
 .chat_label_container {
@@ -22,7 +29,7 @@
   font-weight: 700;
   color: #9ca5ab;
   margin-left: 40px;
-  font-size: 16px;
+  font-size: 25px;
 }
 
 .new_message_container {
@@ -82,7 +89,7 @@
 }
 
 .message_right_styles {
-  background: linear-gradient(168.68deg, #0052c9 1.12%, #0a91db 100%);
+  background: linear-gradient(168.68deg, #7900c9 1.12%, #a70adb 100%);
   color: white;
 }
 
@@ -167,6 +174,7 @@
   transition: 0.5s;
   margin: 0 40px;
   padding: 10px 0px;
+  font-size: 20px;
 }
 
 .participants_paragraph:hover {
@@ -189,6 +197,12 @@
   background-color: white;
   display: flex;
   flex-direction: column;
+
+  font-family: "Urbanist";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 36px;
 }
 
 .participants_label_container {
@@ -201,7 +215,7 @@
   font-weight: 700;
   color: #9ca5ab;
   margin-left: 40px;
-  font-size: 16px;
+  font-size: 25px;
 }
 
 .local_screen_share_preview {
@@ -227,7 +241,7 @@
   position: absolute;
   left: 20%;
   bottom: 0;
-  background: linear-gradient(168.68deg, #0052c9 1.12%, #0a91db 100%);
+  background: linear-gradient(168.68deg, #7900c9 1.12%, #a70adb 100%);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
 }
@@ -239,14 +253,13 @@
 }
 
 .video_button_image {
-  height: 80%;
+  height: 60%;
   padding: 10px;
   border-radius: 25px;
   transition: 0.3s;
 }
 
 .video_button_image:hover {
-  background: blue;
   padding: 10px;
   border-radius: 25px;
 }
@@ -340,7 +353,7 @@ video {
   color: white;
   margin-top: 0;
   padding: 18px 38px;
-  background: linear-gradient(168.68deg, #0052c9 1.12%, #0a91db 100%);
+  background: linear-gradient(168.68deg, #7900c9 1.12%, #a70adb 100%);
   border-radius: 0px 0px 15px 15px;
 }
 
@@ -446,7 +459,7 @@ video {
 
 .direct_chat_header {
   height: 50px;
-  background: linear-gradient(168.68deg, #0052c9 1.12%, #0a91db 100%);
+  background: linear-gradient(168.68deg, #7900c9 1.12%, #a70adb 100%);
   width: 95%;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
@@ -508,7 +521,7 @@ video {
 }
 
 .author_direct_message {
-  background: linear-gradient(168.68deg, #0052c9 1.12%, #0a91db 100%);
+  background: linear-gradient(168.68deg, #7900c9 1.12%, #a70adb 100%);
   float: right;
   border-radius: 8px 8px 0px 8px;
   padding: 13px;

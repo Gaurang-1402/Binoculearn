@@ -73,43 +73,51 @@ header {
 
 .connecting_buttons_container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  margin-left: 0;
+  font-family: "Urbanist";
+  font-style: normal;
 }
 
 .join_room_button {
   width: 180px;
   margin-right: 15px;
   height: 50px;
-  background-color: #1fb564;
+  background-color: #f4e6ff;
   border-radius: 8px;
   border: none;
   font-weight: 700;
-  color: white;
+  color: #163f8d;
   transition: 0.3s;
   font-size: 20px;
+  font-family: "Urbanist";
+  font-style: normal;
 }
 
 .join_room_button:hover {
-  background-color: blue;
+  cursor: pointer;
 }
 
 .create_room_button {
-  background-color: #2d8cff;
-  border: 1px solid #e5e5e5;
-  color: white;
-  font-size: 13px;
-  font-weight: 700;
   width: 180px;
-  height: 30px;
+  margin-right: 15px;
+  height: 50px;
+  background-color: #4b92b0;
   border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  color: #ffffff;
   transition: 0.3s;
+  font-size: 20px;
+  font-family: "Urbanist";
+  font-style: normal;
 }
 
 .create_room_button:hover {
-  background-color: #e5e5e5;
+  cursor: pointer;
 }
 
 connection_buttons_containers {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }

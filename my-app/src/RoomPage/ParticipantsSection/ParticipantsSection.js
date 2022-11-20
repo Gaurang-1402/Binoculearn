@@ -8,9 +8,15 @@ const ParticipantsSection = () => {
     <div className='participants_section_container'>
       <ParticipantsLabel />
       <Participants />
-      <DirectChat />
     </div>
   )
+  // return (
+  //   <div className='participants_section_container'>
+  //     <ParticipantsLabel />
+  //     <Participants />
+  //     <DirectChat />
+  //   </div>
+  // )
 }
 
 export default ParticipantsSection

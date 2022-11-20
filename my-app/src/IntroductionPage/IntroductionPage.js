@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import logo from "../resources/images/logo.png"
 import rhs from "../resources/images/rhs.png"
 import github from "../resources/images/GitHub.png"
-import gdpr from "../resources/images/GDPR.png"
+import text from "../resources/images/text.png"
 
 import ConnectingButtons from "./ConnectingButtons"
 import { connect } from "react-redux"
@@ -47,6 +47,11 @@ const IntroductionPage = ({ setIsRoomHostAction }) => {
           </div>
           <div className='connection_buttons_containers'>
             <ConnectingButtons />
+            <img
+              style={{ width: "30rem", marginTop: "3rem" }}
+              src={text}
+              className='introduction_page_image'
+            ></img>
           </div>
         </div>
         <div class='column'>
@@ -54,11 +59,7 @@ const IntroductionPage = ({ setIsRoomHostAction }) => {
             className='introduction_page_content'
             style={{ display: "flex" }}
           >
-            <img
-              style={{ width: "30rem" }}
-              src={rhs}
-              className='introduction_page_image'
-            ></img>
+            <img style={{ width: "30rem" }} src={rhs} className=''></img>
           </div>
         </div>
       </div>

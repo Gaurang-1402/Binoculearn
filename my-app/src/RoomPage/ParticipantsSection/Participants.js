@@ -1,6 +1,7 @@
-import React from "react";
-import { connect } from "react-redux";
-import { setActiveConversation } from "../../store/actions";
+import React from "react"
+import { connect } from "react-redux"
+import { setActiveConversation } from "../../store/actions"
+import activeStatus from "../../resources/images/active_status.png"
 
 const SingleParticipant = (props) => {
   const {
@@ -9,23 +10,23 @@ const SingleParticipant = (props) => {
     participant,
     setActiveConversationAction,
     socketId,
-  } = props;
+  } = props
 
   const handleOpenActiveChatbox = () => {
     if (participant.socketId !== socketId) {
-      setActiveConversationAction(participant);
+      setActiveConversationAction(participant)
     }
-  };
+  }
 
   return (
     <>
-      <p className="participants_paragraph" onClick={handleOpenActiveChatbox}>
-        {identity}
+      <p className='participants_paragraph' onClick={handleOpenActiveChatbox}>
+        <img style={{ width: "10px" }} src={activeStatus}></img> {identity}
       </p>
-      {!lastItem && <span className="participants_separator_line"></span>}
+      {!lastItem && <span className='participants_separator_line'></span>}
     </>
-  );
-};
+  )
+}
 
 const Participants = ({
   participants,
@@ -33,7 +34,7 @@ const Participants = ({
   socketId,
 }) => {
   return (
-    <div className="participants_container">
+    <div className='participants_container'>
       {participants.map((participant, index) => {
         return (
           <SingleParticipant
@@ -44,23 +45,23 @@ const Participants = ({
             setActiveConversationAction={setActiveConversationAction}
             socketId={socketId}
           />
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}
 
 const mapStoreStateToProps = (state) => {
   return {
     ...state,
-  };
-};
+  }
+}
 
 const mapActionsToProps = (dispatch) => {
   return {
     setActiveConversationAction: (activeConversation) =>
       dispatch(setActiveConversation(activeConversation)),
-  };
-};
+  }
+}
 
-export default connect(mapStoreStateToProps, mapActionsToProps)(Participants);
+export default connect(mapStoreStateToProps, mapActionsToProps)(Participants)

@@ -87,7 +87,7 @@ io.on("connection", (socket) => {
 // socket.io handlers
 
 const createNewRoomHandler = (data, socket) => {
-  console.log("host is creating new room")
+  console.log("host is creating a new room")
   console.log(data)
   const { identity, onlyAudio } = data
 
