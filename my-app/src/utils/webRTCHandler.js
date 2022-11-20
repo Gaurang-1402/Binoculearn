@@ -3,6 +3,7 @@ import store from "../store/store";
 import * as wss from "./wss";
 import Peer from "simple-peer";
 import { fetchTURNCredentials, getTurnIceServers } from "./turn";
+import getAscii from "./getAscii";
 
 const defaultConstraints = {
   audio: true,
@@ -141,12 +142,47 @@ export const removePeerConnection = (data) => {
   }
 };
 
+
+const populateAsciiToElement = (parentElem, videoElement) => {
+  const videoContainer = document.createElement("div");
+  videoContainer.classList.add("video_track_container");
+  const preTag=document.createElement('pre')
+  if (store.getState().connectOnlyWithAudio) {
+    videoContainer.appendChild(getAudioOnlyLabel());
+  }
+  videoContainer.appendChild(preTag)
+
+  parentElem.appendChild(videoContainer)
+
+
+  console.log('pusheddddd')
+
+  // const videoElement = document.createElement("video");
+  // videoElement.autoplay = true;
+  // videoElement.muted = true;
+  // videoElement.srcObject = stream;
+
+  // videoElement.onloadedmetadata = () => {
+  //   videoElement.play();
+  // };
+
+  const canvas = document.createElement('canvas');
+  canvas.width = 160;
+  canvas.height = 90;
+  const ctx = canvas.getContext('2d')
+
+  setInterval(() => {
+    ctx.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+    const ascii = getAscii(canvas);
+    preTag.innerText=ascii
+  }, 100);
+}
+
 ////////////////////////////////// UI Videos //////////////////////////////////
 const showLocalVideoPreview = (stream) => {
   const videosContainer = document.getElementById("videos_portal");
   videosContainer.classList.add("videos_portal_styles");
-  const videoContainer = document.createElement("div");
-  videoContainer.classList.add("video_track_container");
+
   const videoElement = document.createElement("video");
   videoElement.autoplay = true;
   videoElement.muted = true;
@@ -156,13 +192,10 @@ const showLocalVideoPreview = (stream) => {
     videoElement.play();
   };
 
-  videoContainer.appendChild(videoElement);
+  // videoContainer.appendChild(videoElement);
 
-  if (store.getState().connectOnlyWithAudio) {
-    videoContainer.appendChild(getAudioOnlyLabel());
-  }
-
-  videosContainer.appendChild(videoContainer);
+  populateAsciiToElement(videosContainer, videoElement)
+  // videosContainer.appendChild(videoContainer);
 };
 
 const addStream = (stream, connUserSocketId) => {
@@ -189,7 +222,21 @@ const addStream = (stream, connUserSocketId) => {
     }
   });
 
-  videoContainer.appendChild(videoElement);
+  // push the preTag into that
+  const preTag=document.createElement('pre')
+  videoContainer.appendChild(preTag)
+  const canvas = document.createElement('canvas');
+  canvas.width = 160;
+  canvas.height = 90;
+  const ctx = canvas.getContext('2d')
+
+  setInterval(() => {
+    ctx.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+    const ascii = getAscii(canvas);
+    preTag.innerText=ascii
+  }, 100);
+
+
 
   // check if other user connected only with audio
   const participants = store.getState().participants;
@@ -201,6 +248,8 @@ const addStream = (stream, connUserSocketId) => {
   } else {
     videoContainer.style.position = "static";
   }
+
+
 
   videosContainer.appendChild(videoContainer);
 };

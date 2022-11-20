@@ -31,8 +31,8 @@ const IntroductionPage = ({ setIsRoomHostAction }) => {
         </header>
       </div>
 
-      <div class='row'>
-        <div class='column'>
+      <div className='row'>
+        <div className='column'>
           <div
             className='introduction_page_content'
             style={{ display: "flex" }}
@@ -54,7 +54,7 @@ const IntroductionPage = ({ setIsRoomHostAction }) => {
             ></img>
           </div>
         </div>
-        <div class='column'>
+        <div className='column'>
           <div
             className='introduction_page_content'
             style={{ display: "flex" }}
