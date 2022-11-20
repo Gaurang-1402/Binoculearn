@@ -8,7 +8,7 @@
 .chat_section_container {
   height: 100%;
   width: 20%;
-  background-color: white;
+  background-color: #1f272f;
   display: flex;
   flex-direction: column;
 
@@ -167,7 +167,7 @@
 }
 
 .participants_paragraph {
-  color: black;
+  color: white;
   text-align: start;
   font-weight: 500;
   margin-left: 40px;
@@ -194,7 +194,7 @@
 .participants_section_container {
   height: 100%;
   width: 20%;
-  background-color: white;
+  background-color: #1f272f;
   display: flex;
   flex-direction: column;
 
