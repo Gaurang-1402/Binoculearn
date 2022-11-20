@@ -26,3 +26,14 @@ code {
 #dummy_video_canvas {
   display: none;
 }
+.video_track_container{
+  height: fit-content;
+}
+.video_track_container pre{
+  height: 200px;
+  font-size: 4px;
+  overflow: hidden;
+  position: relative;
+  object-position: center;
+  /* border-radius:10%; */
+}
